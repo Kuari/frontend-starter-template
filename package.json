@@ -2,8 +2,9 @@
   "name": "vue-vite-ts-scss-template",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode development",
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
     "preview": "vite build && vite preview",
     "start": "pnpm dev & wait-on tcp:3000 -v"
   },
