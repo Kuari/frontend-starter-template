@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import index from './router'
 import '@/styles/index.scss'
+import 'virtual:windi.css'
 
 const app = createApp(App)
 

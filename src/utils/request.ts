@@ -10,10 +10,8 @@ const service = axios.create({
 // Request interceptors
 service.interceptors.request.use(
   (config) => {
-    // const token = useUserStoreHook().token
-    // if (token)
-    // config.headers
-
+    const token = useUserStoreHook().token
+    config.url = config.url?.includes('?') ? `${config.baseURL as string + config.url}&token=${token}` : `${config.baseURL as string + config.url}?token=${token}`
     return config
   },
   (error) => {
@@ -56,7 +54,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error(res.message || 'Error'))
     }
     else {
-      return response.data
+      return response.data.data
     }
   },
   (error) => {
