@@ -3,7 +3,7 @@ interface Settings {
 }
 
 const settings: Settings = {
-  title: 'vue-vite-ts-template',
+  title: 'fronted-starter-template',
 }
 
 export default settings

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '@/layout/app-main/index.vue'
 import NProgress from '@/utils/progress'
 import { useUserStoreHook } from '@/store/modules/user'
+import settings from '@/settings'
 
 const routes = [
   {
@@ -68,18 +69,21 @@ const whiteList = ['/login', '/404']
 
 router.beforeEach((to, _form, next) => {
   NProgress.start()
-  // 当不在白名单内, 需要检测用户信息和权限
+  // When it is not in the whitelist, it is necessary to detect user information and permissions
   if (!whiteList.includes(to.path)) {
     const UserModule = useUserStoreHook()
 
-    // 没有角色可能是刷新页面导致, 则请求获取用户信息
+    // No role may be caused by refreshing the page, and the user information is requested
     if (UserModule.roles.length === 0)
       UserModule.getUserinfo()
 
-    // 不在路由设置权限内则跳转到登录页
+    // If you are not in the routing setting permission, you will be redirected to the login page
     // if (to.meta.roles && !to.meta?.roles.some((role: string) => UserModule.roles.includes(role)))
     //   next({ path: '/login' })
   }
+
+  // update title
+  document.title = `${to.meta.title} - ${settings.title}` || settings.title;
 
   next()
 })
