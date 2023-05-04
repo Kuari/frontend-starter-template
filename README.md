@@ -1,8 +1,15 @@
 # Frontend Starter Template
 
+## 使用
+
+```bash
+npx degit Kuari/frontend-starter-template my-app
+cd my-app
+pnpm install
+```
 
 
-### 技术栈
+## 技术栈
 
 ```json
 {
