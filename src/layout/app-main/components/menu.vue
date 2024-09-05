@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { useRoute, useRouter } from 'vue-router'
+import settings from '@/settings'
 
 const route = useRoute()
 const router = useRouter()
+
 const handleRouterJump = (path: string) => {
   router.push(path)
 }
@@ -28,23 +29,35 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="menu-container flex flex-row items-center">
-    <div
-      v-for="(item, index) in state.routerList"
-      :key="index"
-      class="menu-item"
-      :class="{ 'menu-item__active': route.path.toString() === item.path }"
-      @click="handleRouterJump(item.path)"
-    >
-      {{ item.title }}
+  <div class="menu-container flex flex-row justify-center border-b-gray border">
+    <div class="max-w-6xl w-full flex flex-row items-center justify-between">
+      <div class="flex flex-row items-center mr-20">
+        <img src="@/assets/img/example/logo.png" alt="logo" class="w-8 h-8 rounded-full mr-3">
+        <h1>{{ settings.title }}</h1>
+      </div>
+
+      <div
+        v-for="(item, index) in state.routerList"
+        :key="index"
+        class="menu-item"
+        :class="{ 'menu-item__active': route.path.toString() === item.path }"
+        @click="handleRouterJump(item.path)"
+      >
+        {{ item.title }}
+      </div>
+
+      <!-- mock user -->
+      <div class="flex flex-row items-center ml-auto">
+        <img src="@/assets/img/example/avatar.png" alt="user" class="w-8 h-8 rounded-full mr-3 cursor-pointer hover:shadow-xl">
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .menu-container {
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .menu-item {

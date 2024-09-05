@@ -39,11 +39,11 @@ service.interceptors.response.use(
       })
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
         ElMessageBox.confirm(
-          '你已被登出，可以取消继续留在该页面，或者重新登录',
-          '确定登出',
+          'You have been logged out. You can cancel and stay on this page, or log in again.',
+          'Confirm logout',
           {
-            confirmButtonText: '重新登录',
-            cancelButtonText: '取消',
+            confirmButtonText: 'Re-login',
+            cancelButtonText: 'Cancel',
             type: 'warning',
           },
         ).then(() => {

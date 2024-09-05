@@ -83,7 +83,7 @@ router.beforeEach((to, _form, next) => {
   }
 
   // update title
-  document.title = `${to.meta.title} - ${settings.title}` || settings.title;
+  document.title = `${to.meta.title} - ${settings.title}` || settings.title
 
   next()
 })

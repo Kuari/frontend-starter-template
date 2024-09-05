@@ -2,8 +2,8 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
 import index from './router'
+import '@/style.css'
 import '@/styles/index.scss'
-import 'virtual:windi.css'
 
 const app = createApp(App)
 

@@ -1,9 +1,9 @@
 {
-  "name": "fronted-starter-template",
-  "author": "Kuari",
-  "homepage": "https://github.com/Kuari/frontend-starter-template",
-  "repository": "https://github.com/Kuari/frontend-starter-template",
-  "version": "1.0.0",
+  "name": "vue-ts-tailwind-vite-starter",
+  "author": "Hunter Ji",
+  "homepage": "https://github.com/hunter-ji/vue-ts-tailwind-vite-starter",
+  "repository": "https://github.com/hunter-ji/vue-ts-tailwind-vite-starter",
+  "version": "2.0.0",
   "scripts": {
     "dev": "vite --mode development",
     "build:dev": "vite build --mode development",
@@ -12,33 +12,34 @@
     "start": "pnpm dev & wait-on tcp:3000 -v"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "pinia": "2.0.30",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
     "vue": "3.2.47",
     "vue-router": "4.1.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.35.2",
-    "@types/js-cookie": "^3.0.2",
-    "@types/js-md5": "^0.7.0",
+    "@antfu/eslint-config": "^0.35.3",
+    "@types/js-cookie": "^3.0.6",
+    "@types/js-md5": "^0.7.2",
     "@types/node": "18.13.0",
-    "@types/nprogress": "^0.2.0",
+    "@types/nprogress": "^0.2.3",
     "@vicons/tabler": "^0.12.0",
     "@vitejs/plugin-vue": "4.0.0",
-    "@vueuse/core": "^10.1.2",
-    "@vueuse/integrations": "^9.12.0",
-    "axios": "^1.3.2",
-    "element-plus": "^2.2.29",
-    "eslint": "^8.33.0",
-    "js-cookie": "^3.0.1",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/integrations": "^9.13.0",
+    "axios": "^1.7.6",
+    "element-plus": "^2.8.1",
+    "eslint": "^8.57.0",
+    "js-cookie": "^3.0.5",
     "js-md5": "^0.7.3",
     "nprogress": "^0.2.0",
-    "sass": "^1.58.0",
+    "sass": "^1.77.8",
     "typescript": "4.9.5",
     "unplugin-auto-import": "0.14.2",
     "unplugin-vue-components": "0.23.0",
     "vite": "4.1.1",
-    "vite-plugin-windicss": "^1.8.10",
-    "vite-svg-loader": "^4.0.0",
-    "windicss": "^3.5.6"
+    "vite-svg-loader": "^4.0.0"
   }
 }

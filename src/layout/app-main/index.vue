@@ -5,12 +5,13 @@ import TopMenu from './components/menu.vue'
 <template>
   <div class="app-main-container">
     <TopMenu />
-
-    <router-view v-slot="{ Component }">
-      <transition name="fade-transform" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <div class="max-w-6xl w-full mx-auto mt-10 py-4">
+      <router-view v-slot="{ Component }">
+        <transition name="fade-transform" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
   </div>
 </template>
 

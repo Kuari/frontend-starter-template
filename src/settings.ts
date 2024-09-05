@@ -3,7 +3,7 @@ interface Settings {
 }
 
 const settings: Settings = {
-  title: 'fronted-starter-template',
+  title: 'vue-ts-tailwind-vite-starter',
 }
 
 export default settings

@@ -4,7 +4,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import WindiCSS from 'vite-plugin-windicss'
 import svgLoader from 'vite-svg-loader'
 import { version as pkgVersion } from './package.json'
 
@@ -15,7 +14,6 @@ if (process.env.NODE_ENV === 'production')
 export default defineConfig({
   plugins: [
     vue(),
-    WindiCSS(),
     svgLoader(),
     AutoImport({
       imports: [

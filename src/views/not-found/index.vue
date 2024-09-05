@@ -11,10 +11,10 @@ const goBack = () => {
   <div class="flex flex-col justify-center items-center">
     <img src="@/assets/img/default/404.png" alt="404" width="300" height="300">
     <p class="mb-4">
-      页面不见了...
+      The page is gone...
     </p>
     <div class="not-found-button" @click="goBack">
-      点击返回
+      return
     </div>
   </div>
 </template>
