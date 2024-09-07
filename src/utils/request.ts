@@ -11,7 +11,8 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     const token = useUserStoreHook().token
-    config.url = config.url?.includes('?') ? `${config.baseURL as string + config.url}&token=${token}` : `${config.baseURL as string + config.url}?token=${token}`
+    config.url = `${config.baseURL as string + config.url}`
+    config.headers.Authorization = `Bearer ${token}`
     return config
   },
   (error) => {

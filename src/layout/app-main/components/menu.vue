@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import settings from '@/settings'
+import { useUserStoreHook } from '@/store/modules/user'
 
 const route = useRoute()
 const router = useRouter()
+
+const userStore = useUserStoreHook()
 
 const handleRouterJump = (path: string) => {
   router.push(path)
@@ -49,6 +52,7 @@ onMounted(() => {
       <!-- mock user -->
       <div class="flex flex-row items-center ml-auto">
         <img src="@/assets/img/example/avatar.png" alt="user" class="w-8 h-8 rounded-full mr-3 cursor-pointer hover:shadow-xl">
+        {{ userStore.$state.name }}
       </div>
     </div>
   </div>

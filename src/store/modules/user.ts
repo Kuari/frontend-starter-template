@@ -1,6 +1,8 @@
+import type { UserInfo } from 'node:os'
 import { defineStore } from 'pinia'
 import { store } from '@/store'
 import { getToken, removeToken, setToken } from '@/utils/cookies'
+import type { authResponse } from '@/apis/user'
 
 interface userStateType {
   token: string
@@ -18,27 +20,49 @@ export const useUserStore = defineStore('user', {
   }),
 
   actions: {
-    login(userinfo: { username: string; password: string }) {
-      // const { username, password } = userinfo
-      // username = username.trim()
-      const data = { accessToken: '' }
+    async login(name: string, password: string) {
+      // Uncomment the following line to use the login API
+      // const res = await login(name, password)
+
+      // Replace the following line with the login API response
+      const res: authResponse = {
+        accessToken: '',
+        refreshToken: '',
+      }
+
       // cookie set token
-      setToken(data.accessToken)
+      setToken(res.accessToken)
       // store set token
-      this.token = data.accessToken
+      this.token = res.accessToken
+
+      // set username
+      this.name = username
     },
     resetToken() {
       this.token = ''
       this.roles = []
     },
-    getUserinfo() {
-      console.log('get userinfo')
+    async getUserinfo() {
+      this.token = <string>getToken()
+
+      // Uncomment the following line to use the getUserInfo API
+      // const result = await getUserInfo()
+
+      // Replace the following line with the getUserInfo API response
+      const result: UserInfo = {
+        id: 1,
+        accountName: 'hunter',
+      }
+
+      this.name = result.accountName
     },
     changeRoles(role: string) {
 
     },
     logout() {
-
+      removeToken()
+      this.token = ''
+      this.roles = []
     },
   },
 

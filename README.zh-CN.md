@@ -1,6 +1,6 @@
 # vue-ts-tailwind-vite-starter
 
-[English](./README.md) | 简体中文
+[English](https://github.com/hunter-ji/vue-ts-tailwind-vite-starter) | 简体中文
 
 ## 项目介绍
 
